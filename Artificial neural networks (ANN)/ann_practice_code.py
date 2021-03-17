@@ -13,7 +13,9 @@ os.chdir('C:\\Data\github\\neural_networks\\Artificial neural networks (ANN)')
 
 df = pd.read_csv('sample_input.csv')
 
-df = df.drop(['hcp_id','hcp_specialty'],axis = 1)
+df = df.drop(['hcp_id'],axis = 1)
+
+df = pd.get_dummies(df,drop_first=True)
 
 df = df.values
 
@@ -41,5 +43,5 @@ model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['Precision'
 
 nn = model.fit(X, Y, epochs=150, batch_size=50)
 
-plt.plot(nn.history['recall'])
+plt.plot(nn.history['precision'])
 plt.show()
