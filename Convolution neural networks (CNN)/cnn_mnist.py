@@ -57,5 +57,3 @@ print(np.argmax(np.round(predictions[0])))
 #Plot first image
 plt.imshow(test_X[0].reshape(28, 28), cmap = plt.cm.binary)
 plt.show()
-
-
